@@ -10,6 +10,9 @@
     <!-- Bootstrap -->
     <link href="assests/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- fontAwesome -->
+    <link href="assests/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
     <!--CSS -->
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -25,9 +28,7 @@ echo $param['message']?>
         <form action="" method="post">
             <p class="form"><input type="text" name="login" placeholder="Login" ></p><br>
             <p class="form"><input type="password" name="mdp" placeholder="Mot de passe"></p><br>
-            <input class="btn btn-danger btn-lg" type="submit" name="connexion" value="Connexion"/>
-            <input class="btn btn-danger btn-lg" type="submit" name="forgot" value="Mot de passe oublié"/>
-            <input class="btn btn-danger btn-lg" type="submit" name="inscription" value="Inscription"/>
+            <input class="btn btn-warning col-md-12" type="submit" name="connexion" value="Connexion"/>
         </form>
 
 
