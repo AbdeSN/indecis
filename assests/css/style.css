@@ -1,3 +1,15 @@
 .formulaire{
     margin: 50px 50px 50px 50px;
 }
+
+ form {
+    padding : 25px 25px 20px 25px;
+}
+
+.btn2 {
+  margin : auto;
+  display : block;
+  background-color: rgb(0, 167, 109);
+  color : white;
+  padding: 10px 30px 10px 30px;
+}
