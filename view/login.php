@@ -25,16 +25,16 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form method="POST" action="">
           <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>
-        <input type="text" id="defaultForm-email" class="form-control">
+        <input type="text" name="mail" id="defaultForm-email" class="form-control">
         <label for="defaultForm-email">Your email</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="defaultForm-pass" class="form-control">
+        <input type="password" name="password" id="defaultForm-pass" class="form-control">
         <label for="defaultForm-pass">Your password</label>
     </div>
           <div class="form-group">
@@ -43,10 +43,10 @@
                 <input class="form-check-input" type="checkbox"> Remember Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <button class="btn btn-primary btn-block" name="submit">Connexion</button>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Register an Account</a>
+         
           <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
         </div>
       </div>
