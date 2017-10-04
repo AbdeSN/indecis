@@ -24,9 +24,14 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="card-sm">
-        <center><img src="images\gfi-logo.png"></center>
+        <img src="view/images/gfi-logo.png">
     </div>
-    <a class="navbar-brand" href="www.gfi.world" ></a>
+    <div style="display: inline-block">
+        <p style="font-size: small; float: left; color: white;">Name of commercial</p>
+
+        <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
+    </div>
+
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

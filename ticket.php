@@ -31,9 +31,9 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="card-sm">
-        <center><img src="images\gfi-logo.png"></center>
+        <center><img src="view/images/gfi-logo.png"></center>
     </div>
-    <a class="navbar-brand" href="index.html" ></a>
+    <p class="navbar-brand">Name of commercial</p>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,21 +53,15 @@
               </form>
             </li>-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="table">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="tickets_list.php">
                     <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Clients</span>
+                    <span class="nav-link-text">Ticket list</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="list">
-                <a class="nav-link" href="blank.html">
+                <a class="nav-link" href="ticket.php">
                     <i class="fa fa-fw fa-list-alt"></i>
-                    <span class="nav-link-text">Fiche besoins</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="send">
-                <a class="nav-link" href="contact.html">
-                    <i class="fa fa-fw fa-send"></i>
-                    <span class="nav-link-text">Contact</span>
+                    <span class="nav-link-text">Create ticket</span>
                 </a>
             </li>
             <li class="nav-item">
