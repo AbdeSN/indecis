@@ -23,11 +23,11 @@
         }
         private  function  charger($page)  // private :  la methode ou la fonction est seulement accesible dans la classe
         {
-            require_once 'view/'.$page.'.php';
+            require_once '/'.$page.'.php';
         }
         private function  chargerDonnees($page,$data)
         {
-            require_once 'view/'.$page.'.php';
+            require_once '/'.$page.'.php';
         }
 
     }
