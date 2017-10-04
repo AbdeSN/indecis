@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col md">
                         <div class="md-form form-sm">
-                            <textarea type="text" id="fulldescription" class="md-textarea"rows=""></textarea>
+                            <textarea type="text" id="fulldescription" class="md-textarea" cols="2" dropzone="move"></textarea>
                             <label for="textarea-char-counter">Full description</label>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning" href="login.html">Logout</a>
+                    <a class="btn btn-warning" href="login.php">Logout</a>
                 </div>
             </div>
         </div>

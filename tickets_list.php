@@ -95,6 +95,7 @@
                     <table class="table table-bordered table-fit" datatable-show-refresh="true" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
+                            <th>Identifiant</th>
                             <th>Statut</th>
                             <th>Titre</th>
                             <th>Date</th>
@@ -103,24 +104,35 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td>1</td>
                             <td>Open</td>
                             <td>System Infra Architecture</td>
                             <td>20/11/2017</td>
                             <td>Orange</td>
                         </tr>
                         <tr>
+                            <td>2</td>
                             <td>Open</td>
                             <td>Consulting</td>
                             <td>20/12/2017</td>
                             <td>EDF</td>
                         </tr>
                         <tr>
+                            <td>3</td>
                             <td>Win</td>
                             <td>App Solution</td>
                             <td>01/02/2017</td>
                             <td>BNP</td>
                         </tr>
                         <tr>
+                            <td>4</td>
+                            <td>Lost</td>
+                            <td>Consulting</td>
+                            <td>01/02/2017</td>
+                            <td>BNP</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
                             <td>Lost</td>
                             <td>Consulting</td>
                             <td>01/02/2017</td>

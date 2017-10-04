@@ -21,9 +21,11 @@
 </head>
 
 <body class="bg-dark">
+<br>
+<center><img src="view/images/big%20logo.png" width="200" height="120"></center>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+        <div style="height: 2rem" class="card-header"></div>
         <div class="card-body">
             <form>
                 <div class="md-form">
@@ -37,29 +39,32 @@
                     <input type="password" id="defaultForm-pass" class="form-control">
                     <label for="defaultForm-pass">Your password</label>
                 </div>
-                <div class="form-group">
+                <div class="form-group text-center">
                     <div class="form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox"> Remember Password</label>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block" href="tickets_list.php">Login</a>
+                <div class="text-center">
+                    <input class="btn btn-primary btn-block btn-lg" type="submit" name="login" value="Login">
+<!--                <a class="btn btn-primary btn-block">Login</a>-->
+                </div>
             </form>
+            <br>
             <div class="text-center">
-                <a class="d-block small mt-3" href="register.html">Register an Account</a>
-                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
             </div>
         </div>
     </div>
 </div>
 <!-- /.content-wrapper-->
-<footer class="sticky-footer">
+<!--<footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
             <small>Copyright © 1D6 Team</small>
         </div>
     </div>
-</footer>
+</footer>-->
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/popper/popper.min.js"></script>

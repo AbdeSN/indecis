@@ -9,8 +9,29 @@
 
             public function login($mail, $password)
             {
-                $sql = "select * from users where mail='".$ref."' and password='".$password."' ";
-                return $this->db->exec($sql);
+                $password = sha1($_POST['password']);
+                $req = $bdd->prepare('select * frm users where mail = :mail and password = :password');
+                $req->execute(array(
+                   'mail' => $mail,
+                   'password' => $password
+                ));
+               /* $sql = "select * from users where mail='".$ref."' and password='".$password."' ";
+                return $this->db->exec($sql);*/
+
+               $resultat = $req->fetch();
+
+               if(!$resultat)
+               {
+                   $erreurAutehtification  = "Erreur d'authentification";
+               }
+               else
+               {
+                   session_start();
+                   $_SESSION['idU'] = $resultat['idU'];
+                   $_SESSION['mail'] =  $resultat['mail'];
+
+                   $connected = "Connecté";
+               }
             }
         }
 ?>
