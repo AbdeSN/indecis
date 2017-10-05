@@ -1,3 +1,68 @@
+<?php
+
+$servername = 'localhost';
+$username = 'root';
+$dbname = 'indecis';
+$password = '';
+$message = '';
+
+$bdd = new mysqli($servername, $username, $password, $dbname);
+
+
+if(isset($_POST['log']))
+{
+    if(!(($_POST['mail']) && isset($_POST['password'])) =='')
+    {
+        $mail = addslashes(htmlspecialchars(htmlentities(trim($_POST['mail']))));
+
+        var_dump($mail);
+        $password = $_POST['password'];
+        var_dump($password);
+        if(preg_match("^[a-z0-9._-]+@+g+f+i+.+f+r^",$mail))
+        {
+            $req_mail = mysqli_query($bdd,"SELECT mail, password FROM users WHERE mail ='$mail'");
+            $row = mysqli_fetch_row($req_mail);
+
+            if($mail == $row[0])
+            {
+                if($password == $row[1])
+                {
+                    session_start();
+                    $_SESSION['mail'] = $row['mail'];
+                    header("Location: __. DIR ___ListBesoins");
+
+                }
+                else
+                {
+                    $message = "mot de passe faux !";
+                }
+            }
+            else
+            {
+                $message = "mail faux!!!!";
+            }
+        }
+        else
+        {
+            $message =  "mail externe";
+        }
+    }
+    else
+    {
+        $message =  "Veuillez remplir tous les champs !";
+    }
+}
+else
+{
+
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,18 +90,18 @@
 <center><img src="assets/images/big_logo.png" width="200" height="120"></center>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div style="height: 2rem" class="card-header"></div>
+        <div style="height: 2rem" class="card-header"><?php echo $message; ?></div>
         <div class="card-body">
-            <form>
+            <form method="post">
                 <div class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="text" id="defaultForm-email" class="form-control">
+                    <input type="email" name="mail" id="defaultForm-email" class="form-control">
                     <label for="defaultForm-email">Your email</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix grey-text"></i>
-                    <input type="password" id="defaultForm-pass" class="form-control">
+                    <input type="password" name="password" id="defaultForm-pass" class="form-control">
                     <label for="defaultForm-pass">Your password</label>
                 </div>
                 <div class="form-group text-center">
@@ -46,14 +111,37 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <input class="btn btn-primary btn-block btn-lg" type="submit" name="login" value="Login">
+                    <input class="btn btn-primary btn-block btn-lg" type="submit" name="log" value="Login">
                     <a class="btn btn-primary" href="FormBesoin">Form</a>-->
                     <a class="btn btn-primary" href="ListeBesoins">List</a>-->
                 </div>
             </form>
             <br>
             <div class="text-center">
-                <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
+                <a class="d-block small" data-toggle="modal" data-target="#Modal">Forgot Password?</a>
+            </div>
+            <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Reset your password ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Write your GFI email address, we will process your request.
+                            <input type="email" id="resetPassword" placeholder="example@gfi.fr">
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-warning" href="Index">
+                                reset password</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

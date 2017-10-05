@@ -37,12 +37,12 @@ if ($conn->connect_error) {
   $consultantname4 = $_POST['consultantname4'];
   $consultantname5 = $_POST['consultantname5'];
 
-  $sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
+  /*$sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
     montant, statut, streetnb, street, postalcode, city, datedebut, datefin, nbjoursemaine, dateauplustard, consultantname1, consultantname2,
     consultantname3, consultantname4, consultantname5)
   VALUES ('', '$nomentreprise', '$nomclient', '1', '$titreticket', '$descriptionticket', '$factor1', '$factor2', '$factor3',
     '$montant', '', '$streetnb', '$street', '$postalcode', '$city', '$datedebut', '$datefin', '$nbjoursemaine', '$dateauplustard', '$consultantname1',
-    '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";
+    '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";*/
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -50,7 +50,6 @@ if ($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$conn->close();
 }
 
 
