@@ -10,7 +10,9 @@
     <title>GFI App</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/datepicker3.css" rel="stylesheet" type="text/css">
+    <link href="view/css/datepicker3.css" rel="stylesheet" type="text/css">
+    <script src="view/js/jquery-1.11.1.min.js"></script>
+    <script src="view/js/bootstrap-datepicker.js"></script>
     <!-- Custom fonts for this template-->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/font-awesome/css/mdb.min.css" rel="stylesheet" type="text/css">
@@ -24,6 +26,11 @@
         $(function(){
             $('.datepicker').datepicker();
         });
+    </script>
+    <script>
+      	$('.input-daterange input').each(function() {
+      	$('.datepicker').datepicker();
+      	});
     </script>
 </head>
 
@@ -92,137 +99,132 @@
         <ol class="breadcrumb">
                 <li class="breadcrumb-item active">Create ticket</li>
         </ol>
-        <!-- /.container-fluid-->
-        <div class="card mb-3">
-            <div  style="height: 1rem" class="card-header"></div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3"> <div class="md-form form-sm">
-                            <input placeholder="Date" type="text" id="Date" class="form-control" disabled>
-                        </div></div>
-                    <div class="col-md-3"> <div class="md-form form-sm">
-                            <input placeholder="Client" type="text" id="Client" class="form-control">
-                        </div> </div>
-                    <div class="col-md-3"><div class="md-form form-sm">
-                            <input placeholder="Name" type="text" id="Name" class="form-control">
-                        </div> </div>
-                    <div class="col-md-3"><div class="md-form form-sm">
-                            <input placeholder="Title" type="text" id="Title" class="form-control">
-                        </div> </div>
-                </div>
-                <div class="row">
-                    <div class="col md">
-                        <div class="md-form form-sm">
-                            <textarea type="text" id="fulldescription" class="md-textarea" cols="2" dropzone="move"></textarea>
-                            <label for="textarea-char-counter">Full description</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="md-form form-sm">
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option>Factor 1</option>
-                                    <option>Factor 2</option>
-                                    <option>Factor 4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3"> <div class="md-form form-sm">
-                            <input placeholder="Duration(Days/Week/Month)" type="text" id="Duration" class="datepicker">
-                        </div></div>
-                    <div class="col-md-3">
-                        <input class="datepicker" type="text" name="date" placeholder="Date">
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-
-                    </div>
-                    <div class="col-md-3">
-                        <div class="md-form form-sm">
-                            <i class="fa fa-map-marker "></i>
-                            <input placeholder="Loaction" type="text" id="Location" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-
-                    </div>
-                    <div class="col-md-3">
-                        <div class="md-form form-sm">
-                            <i class="fa fa-eur"></i>
-                            <input placeholder="Rate" type="text" id="Rate" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <i class="fa fa-user"></i>
-                    <div class="md-form form-sm">
-                        <input placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
-                        <input placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
-                        <input placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
-                        <input placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
-                        <input placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
-                    </div>
-                </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <form class="form-inline">
-
-                                <div class="form-group">
-                                    <label style="color: #495057; margin-right: 2rem" for="form5"><b>Stat :</b></label>
-                                    <input name="group1" type="radio" id="radio1" checked="checked">
-                                    <label style="color: #495057; " for="radio11">Open</label>
-                                </div>
-                                <div class="form-group">
-                                    <input name="group1" type="radio" id="radio2">
-                                    <label style="color: #495057; " for="radio21">Win</label>
-                                </div>
-                                <div class="form-group">
-                                    <input name="group1" type="radio" id="radio3">
-                                    <label style="color: #495057; " for="radio31">Lost</label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
+    <!-- /.container-fluid-->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-list-alt"></i> Fiches Besoins</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3"> <div class="md-form form-sm">
+          <input placeholder="Date" type="text" id="nowdate" class="form-control" disabled>
+        </div></div>
+        <div class="col-md-3"> <div class="md-form form-sm">
+          <input placeholder="Client" type="text" id="Client" class="form-control">
+        </div> </div>
+        <div class="col-md-3"><div class="md-form form-sm">
+          <input placeholder="Name" type="text" id="Name" class="form-control">
+        </div> </div>
+        <div class="col-md-3"><div class="md-form form-sm">
+          <input placeholder="Title" type="text" id="Title" class="form-control">
+        </div> </div>
+      </div>
+      <div class="row">
+        <div class="col md">
+          <div class="md-form form-sm">
+            <textarea type="text" id="fulldescription" class="md-textarea" rows="" placeholder="Full description"></textarea>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="md-form form-sm">
+            <div class="form-group">
+              <select class="form-control form-control-lg">
+                <option>Factor 1</option>
+                <option>Factor 2</option>
+                <option>Factor 3</option>
+              </select>
             </div>
-            <div class="row">
-                <div class="col-md">
-                    <form action="#">
-                        <div class="file-field">
-                            <center>
-                                <div class="btn btn-primary btn-sm">
-                                    <input type="file" multiple></input>
-                                </div>
-                            </center>
-                            <br>
-                            <center>
-                                <div class="file-path-wrapper col-md-6 ">
-                                    <input class="file-path validate" type="text" placeholder="Description files">
-                                </div>
-                            </center>
-                        </div>
-                    </form>
+          </div>
+          </div>
+          <div class="col-md-3"> <div class="md-form form-sm">
+        <i class="fa fa-eur"></i>
+          <input placeholder="Rate" type="number" min="0.00" step="0.01" value="1.00" id="Rate" class="form-control">
+        </div>
+
+          </div>
+          <div class="col-md-3"><label for="form5">Status :</label>
+          <form class="form-inline">
+
+            <div class="form-group">
+              <input name="group1" type="radio" id="radio1" checked="checked">
+              <label for="radio11">Open</label>
+            </div>
+            <div class="form-group">
+              <input name="group1" type="radio" id="radio2">
+              <label for="radio21">Win</label>
+            </div>
+            <div class="form-group">
+              <input name="group1" type="radio" id="radio3">
+              <label for="radio31">Lost</label>
+            </div>
+          </form>
+
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md-3">
+        <i class="fa fa-map-marker"></i> <span>Location</span><div class="md-form form-sm">
+          <input placeholder="Number" type="number" id="Location" class="form-control">
+          <input placeholder="Street" type="text" id="Location" class="form-control">
+          <input placeholder="Postal Code" type="number" id="Location" class="form-control">
+          <input placeholder="City" type="text" id="Location" class="form-control">
+        </div></div>
+        <div class="col-md-3">
+          <div class="form-inline">
+            <div class="md-form form-sm">
+                <div class="input-group input-daterange">
+                <input type="text" class="form-control datepicker" value="" placeholder="">
+                <div class="input-group-addon"><span>to</span></div>
+                <input type="text" class="form-control datepicker" value="" placeholder="">
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md">
-                    <center><div class="btn btn-primary btn-lg"><span>Save & Share</span></center>
-                </div>
+            <div class="md-form form-sm">
+              <input placeholder="Days/Week" type="number" min="0" step="1" id="Duration" class="form-control">
+            </div>
+          </div>
+            <div class="from-group date">
+              <input class="datepicker" type="text" name="date" placeholder="Start at the latest">
             </div>
         </div>
+        <div class="col-md-3">
+        <i class="fa fa-user"></i> <span>Names</span>
+          <div class="md-form form-sm">
+          <input placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
+          <input placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
+          <input placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
+          <input placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
+          <input placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
+        </div> </div>
+        <div class="col-md-3">
+        <form action="#">
+            <div class="file-field">
+              <div class="btn btn-primary btn-sm">
+                <input type="file" multiple></input>
+              </div>
+              <!--<div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Description files">
+              </div>-->
+            </div>
+          </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md col-lg">
+           </div>
+      </div>
+    <div class="row">
+      <div class="col-md">
+          <center><div class="btn btn-primary btn-lg"><span>Save & Share</span></center>
+        </div>
+      </div>
     </div>
+  </div>
 
 
+<!-- /.container-fluid-->
     <!-- /.container-fluid-->
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -262,11 +264,10 @@
         }
 
         today = dd + '/' + mm + '/' + yyyy;
-        document.getElementById('Date').value = today;
+        document.getElementById('nowdate').value = today;
     </script>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
@@ -281,7 +282,7 @@
     <script src="view/js/mdb.js"></script>
     <!-- Custom scripts for this page-->
     <script src="view/js/sb-admin-datatables.min.js"></script>
-    <script src=view/js/sb-admin-charts.min.js"></script>
+    <script src="view/js/sb-admin-charts.min.js"></script>
 </div>
 </body>
 
