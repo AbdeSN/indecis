@@ -13,7 +13,6 @@
 
     <link href="assets/css/datepicker3.css" rel="stylesheet" type="text/css">
 
-    <link href="assets/css/datepicker3.css" rel="stylesheet" type="text/css">
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap-datepicker.js"></script>
 
@@ -296,9 +295,6 @@
     <script src="assets/js/mdb.min.js"></script>
     <script src="assets/js/mdb.js"></script>
     <!-- Custom scripts for this page-->
-
-    <script src="assets/js/sb-admin-datatables.min.js"></script>
-    <script src="assets/js/sb-admin-charts.min.js"></script>
 
     <script src="assets/js/sb-admin-datatables.min.js"></script>
     <script src="assets/js/sb-admin-charts.min.js"></script>

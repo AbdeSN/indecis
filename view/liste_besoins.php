@@ -10,6 +10,8 @@
     <title>GFI App</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
     <!-- Custom fonts for this template-->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/font-awesome/css/mdb.min.css" rel="stylesheet" type="text/css">
@@ -168,9 +170,9 @@
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src=".vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
-    <script src=".vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
@@ -179,7 +181,7 @@
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin.min.js"></script>
-    <script src=assets/"js/mdb.min.js"></script>
+    <script src="assets/js/mdb.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="assets/js/sb-admin-datatables.min.js"></script>
     <script src="assets/js/sb-admin-charts.min.js"></script>
