@@ -15,48 +15,53 @@ if(isset($_POST['log']))
     {
         $mail = addslashes(htmlspecialchars(htmlentities(trim($_POST['mail']))));
 
-        var_dump($mail);
+
         $password = $_POST['password'];
-        var_dump($password);
+
         if(preg_match("^[a-z0-9._-]+@+g+f+i+.+f+r^",$mail))
         {
-            $req_mail = mysqli_query($bdd,"SELECT mail, password FROM users WHERE mail ='$mail'");
+            $req_mail = mysqli_query($bdd,"SELECT mail, password, role FROM users WHERE mail ='$mail'");
             $row = mysqli_fetch_row($req_mail);
 
             if($mail == $row[0])
             {
                 if($password == $row[1])
                 {
-                    session_start();
-                    $_SESSION['mail'] = $row['mail'];
-                    header("Location: ListeBesoins");
-
+                    if($row[2] == 'commercial' || $row[2] == 'admin' )
+                    {
+                        session_start();
+                        $_SESSION['mail'] = $row['mail'];
+                        header("Location: ListeBesoins");
+                    }
+                    else
+                    {
+                        $message = "Access denied";
+                    }
                 }
                 else
                 {
-                    $message = "mot de passe faux !";
+                    $message = "Password error";
                 }
             }
             else
             {
-                $message = "mail faux!!!!";
+                $message = "Email adress error";
             }
         }
         else
         {
-            $message =  "mail externe";
+            $message =  "Enter GFI email adress";
         }
     }
     else
     {
-        $message =  "Veuillez remplir tous les champs !";
+        $message =  "Complete all fields";
     }
 }
 else
 {
 
 }
-
 
 ?>
 
@@ -90,7 +95,7 @@ else
 <center><img src="assets/images/big_logo.png" width="200" height="120"></center>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div style="height: 2rem" class="card-header"><?php echo $message; ?></div>
+        <div style="height: 2rem" class="card-header"><?php echo $message ?></div>
         <div class="card-body">
             <form method="post">
                 <div class="md-form">
@@ -112,8 +117,6 @@ else
                 </div>
                 <div class="text-center">
                     <input class="btn btn-primary btn-block btn-lg" type="submit" name="log" value="Login">
-                    <a class="btn btn-primary" href="FormBesoin">Form</a>-->
-                    <a class="btn btn-primary" href="ListeBesoins">List</a>-->
                 </div>
             </form>
             <br>

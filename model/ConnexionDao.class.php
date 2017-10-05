@@ -9,33 +9,10 @@ class ConnexionDao extends Model
 
     public function login($mail, $password)
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=indecis;charset=utf8', 'root', '');
 
+        $sql = "select * from users where mail='$mail' and password='$password";
+         return $this->db->exec($sql);
 
-        $password = sha1($_POST['password']);
-
-        $req = $bdd->prepare("select * from users where mail = :mail and password = :password");
-        $req->execute(array(
-            'mail' => $mail,
-            'password' => $password
-        ));
-        /* $sql = "select * from users where mail='".$ref."' and password='".$password."' ";
-         return $this->db->exec($sql);*/
-
-        $resultat = $req->fetch();
-
-        if(!$resultat)
-        {
-            $erreurAutehtification  = "Erreur d'authentification";
-        }
-        else
-        {
-            session_start();
-            $_SESSION['idU'] = $resultat['idU'];
-            $_SESSION['mail'] =  $resultat['mail'];
-
-            $connected = "Connecté";
-        }
     }
 }
 ?>

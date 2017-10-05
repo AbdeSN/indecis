@@ -1,3 +1,23 @@
+<?php
+
+/* if(isset($_POST['out']))
+    {
+        // Suppression des variables de session et de la session
+        session_destroy();
+
+    // Suppression des cookies de connexion automatique
+//        setcookie('login', '');
+//        setcookie('pass_hache', '');
+
+        header("Location: Index");
+    }
+    else
+    {
+
+    }
+*/?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +49,7 @@
         <img src="assets/images/gfi-logo.png">
     </div>
     <div style="display: inline-block">
-        <p style="font-size: small; float: left; color: white;">Name of commercial</p>
+        <p style="font-size: small; float: left; color: white;"><?php  ?></p>
 
         <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
     </div>
@@ -40,18 +60,7 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <!-- <li class="nav-item">
-              <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                <div class="input-group">
-                  <input class="form-control" type="text" placeholder="Search...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-warning" type="button">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </span>
-                </div>
-              </form>
-            </li>-->
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="table">
                 <a class="nav-link" href="ListeBesoins">
                     <i class="fa fa-fw fa-table"></i>
@@ -90,6 +99,9 @@
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div  style="height: 1rem" class="card-header"></div>
+            <a style="text-align: center;" href="FormBesoin">
+                <button style="text-align: center;" class="btn btn-warning btn-sm">Create a ticket</button>
+            </a>
                 <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-fit" datatable-show-refresh="true" id="dataTable" width="100%" cellspacing="0">
@@ -106,11 +118,11 @@
 
                       echo "<thead>
                       <tr>
-                      <th>Identifiant</th>
-                      <th>Statut</th>
-                      <th>Titre</th>
-                      <th>Date</th>
-                      <th>Client</th>
+                      <th class='text-center'>ID</th>
+                      <th class='text-center'>State</th>
+                      <th class='text-center'>Title</th>
+                      <th class='text-center'>Date</th>
+                      <th class='text-center'>Costumer</th>
                       </tr>
                       </thead>
                       </tbody>";
@@ -118,11 +130,11 @@
                       while($row = mysqli_fetch_array($result))
                       {
                       echo "<tr>";
-                      echo "<td>" . $row['idB'] . "</td>";
-                      echo "<td>" . $row['statut'] . "</td>";
-                      echo "<td>" . $row['titreticket'] . "</td>";
-                      echo "<td>" . $row['datedujour'] . "</td>";
-                      echo "<td>" . $row['nomentreprise'] . "</td>";
+                      echo "<td class='text-center'>" . $row['idB'] . "</td>";
+                      echo "<td class='text-center'>" . $row['statut'] . "</td>";
+                      echo "<td class='text-center'>" . $row['titreticket'] . "</td>";
+                      echo "<td class='text-center'>" . $row['datedujour'] . "</td>";
+                      echo "<td class='text-center'>" . $row['nomentreprise'] . "</td>";
                       echo "</tr>";
                       }
                       echo "</tbody>
@@ -140,23 +152,25 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning" href="Index">Logout</a>
+    <form method="post  ">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
+                        <input class="btn btn-warning" type="submit" name="out" value="Logout">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>

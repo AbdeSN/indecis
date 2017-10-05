@@ -13,56 +13,68 @@ class Connexion extends Controller
 
     public function connexion()
     {
-        var_dump("sa mama");
-        if(isset($_POST['login']))
-        {
+        $servername = 'localhost';
+        $username = 'root';
+        $dbname = 'indecis';
+        $password = '';
+        $message = '';
 
-            if(isset($_POST['mail'])&& isset($_POST['password']))
+        $bdd = new mysqli($servername, $username, $password, $dbname);
+
+
+        if(isset($_POST['log']))
+        {
+            if(!(($_POST['mail']) && isset($_POST['password'])) =='')
             {
                 $mail = addslashes(htmlspecialchars(htmlentities(trim($_POST['mail']))));
-                $password = sha1($_POST['password']);
-                if(strlen($mail > 7))
-                {
-                    if(preg_match("^[a-z0-9._-]+@+g+f+i+.+f+r",$mail))
-                    {
-                        $pass = $this->db->prepare("select password from users where mail = :mail");
-                        if(strncmp($password,$pass,strlen($pass)) === 0)
-                        {
-                            session_start();
-                            $_SESSION['idU'] = "select idU from users where mail = :mail";
-                            $_SESSION['mail'] = $mail;
 
-                            echo 'Vous êtes connecté !';
+
+                $password = $_POST['password'];
+
+                if(preg_match("^[a-z0-9._-]+@+g+f+i+.+f+r^",$mail))
+                {
+                    $req_mail = mysqli_query($bdd,"SELECT mail, password, role FROM users WHERE mail ='$mail'");
+                    $row = mysqli_fetch_row($req_mail);
+
+                    if($mail == $row[0])
+                    {
+                        if($password == $row[1])
+                        {
+                            if($row[2] == 'commercial' || $row[2] == 'admin' )
+                            {
+                                session_start();
+                                $_SESSION['mail'] = $row['mail'];
+                                header("Location: ListeBesoins");
+                            }
+                            else
+                            {
+                                $message = "Access denied";
+                            }
                         }
                         else
                         {
-                            echo "mot de passe faux !";
-                            print_r("mot de passe faux !");
+                            $message = "mot de passe faux !";
                         }
                     }
                     else
                     {
-                        echo "mail faux";
-                        print_r("mail faux");
+                        $message = "mail faux!!!!";
                     }
                 }
                 else
                 {
-                    echo "mail faux longueur";
-                    print_r("mail faux longueur");
+                    $message =  "mail externe";
                 }
             }
             else
             {
-                echo "Veuillez remplir tous les champs !";
-                print_r("Veuillez remplir tous les champs !");
+                $message =  "Veuillez remplir tous les champs !";
             }
         }
         else
         {
-            print_r("ekghdsjhfjHFGSJdsh");
-        }
 
+        }
     }
 }
 
