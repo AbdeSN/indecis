@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 05, 2017 at 10:38 AM
+-- Generation Time: Oct 05, 2017 at 11:49 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -32,14 +32,17 @@ DROP TABLE IF EXISTS `besoins`;
 CREATE TABLE IF NOT EXISTS `besoins` (
   `idB` int(4) NOT NULL AUTO_INCREMENT,
   `datedujour` varchar(45) NOT NULL,
-  `date` date NOT NULL,
+  `nomentreprise` varchar(50) NOT NULL,
+  `nomclient` varchar(50) NOT NULL,
   `idC` int(4) NOT NULL,
   `titreticket` text NOT NULL,
   `descriptionticket` text NOT NULL,
-  `date_startLatest` date NOT NULL,
+  `factor1` varchar(50) NOT NULL,
+  `factor2` varchar(50) DEFAULT NULL,
+  `factor3` varchar(50) DEFAULT NULL,
   `montant` varchar(60) NOT NULL,
   `statut` varchar(45) NOT NULL,
-  `rate` int(20) NOT NULL,
+  `streetnb` varchar(50) NOT NULL,
   `street` varchar(45) NOT NULL,
   `postalcode` varchar(10) NOT NULL,
   `city` text NOT NULL,
