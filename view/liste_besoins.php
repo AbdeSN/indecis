@@ -93,56 +93,44 @@
                 <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-fit" datatable-show-refresh="true" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th>Identifiant</th>
-                            <th>Statut</th>
-                            <th>Titre</th>
-                            <th>Date</th>
-                            <th>Client</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Open</td>
-                            <td>System Infra Architecture</td>
-                            <td>20/11/2017</td>
-                            <td>Orange</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Open</td>
-                            <td>Consulting</td>
-                            <td>20/12/2017</td>
-                            <td>EDF</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Win</td>
-                            <td>App Solution</td>
-                            <td>01/02/2017</td>
-                            <td>BNP</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Lost</td>
-                            <td>Consulting</td>
-                            <td>01/02/2017</td>
-                            <td>BNP</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Lost</td>
-                            <td>Consulting</td>
-                            <td>01/02/2017</td>
-                            <td>BNP</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                      <?php
+
+                      $servername = 'localhost';
+                      $username = 'root';
+                      $dbname = 'indecis';
+                      $password = '';
+
+                      $bdd = new mysqli($servername, $username, $password, $dbname);
+
+                      $result = mysqli_query($bdd,"SELECT * FROM besoins");
+
+                      echo "<thead>
+                      <tr>
+                      <th>Identifiant</th>
+                      <th>Statut</th>
+                      <th>Titre</th>
+                      <th>Date</th>
+                      <th>Client</th>
+                      </tr>
+                      </thead>
+                      </tbody>";
+
+                      while($row = mysqli_fetch_array($result))
+                      {
+                      echo "<tr>";
+                      echo "<td>" . $row['idB'] . "</td>";
+                      echo "<td>" . $row['statut'] . "</td>";
+                      echo "<td>" . $row['titreticket'] . "</td>";
+                      echo "<td>" . $row['datedujour'] . "</td>";
+                      echo "<td>" . $row['nomentreprise'] . "</td>";
+                      echo "</tr>";
+                      }
+                      echo "</tbody>
+                      </table>";
+                      mysqli_close($bdd);
+                      ?>
                 </div>
             </div>
-<!--            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
         </div>
     </div>
     <!-- /.container-fluid-->
