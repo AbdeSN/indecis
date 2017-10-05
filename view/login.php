@@ -29,7 +29,7 @@ if(isset($_POST['log']))
                 {
                     session_start();
                     $_SESSION['mail'] = $row['mail'];
-                    header("Location: __. DIR ___ListBesoins");
+                    header("Location: ListeBesoins");
 
                 }
                 else
