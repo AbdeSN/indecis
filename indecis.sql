@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 05, 2017 at 11:49 AM
+-- Generation Time: Oct 05, 2017 at 03:47 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `besoins`;
 CREATE TABLE IF NOT EXISTS `besoins` (
   `idB` int(4) NOT NULL AUTO_INCREMENT,
-  `datedujour` varchar(45) NOT NULL,
+  `datedujour` date NOT NULL,
   `nomentreprise` varchar(50) NOT NULL,
   `nomclient` varchar(50) NOT NULL,
   `idC` int(4) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `besoins` (
   `factor1` varchar(50) NOT NULL,
   `factor2` varchar(50) DEFAULT NULL,
   `factor3` varchar(50) DEFAULT NULL,
-  `montant` varchar(60) NOT NULL,
+  `montant` float NOT NULL,
   `statut` varchar(45) NOT NULL,
   `streetnb` varchar(50) NOT NULL,
   `street` varchar(45) NOT NULL,
@@ -57,7 +57,14 @@ CREATE TABLE IF NOT EXISTS `besoins` (
   `consultantname5` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idB`),
   KEY `id client` (`idC`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `besoins`
+--
+
+INSERT INTO `besoins` (`idB`, `datedujour`, `nomentreprise`, `nomclient`, `idC`, `titreticket`, `descriptionticket`, `factor1`, `factor2`, `factor3`, `montant`, `statut`, `streetnb`, `street`, `postalcode`, `city`, `datedebut`, `datefin`, `nbjoursemaine`, `dateauplustard`, `consultantname1`, `consultantname2`, `consultantname3`, `consultantname4`, `consultantname5`) VALUES
+(3, '2000-05-12', 'zz', 'zz', 1, 'zz', '', '', '', '', 555, '', '5555', 'zz', '44', 'zz', '2000-05-12', '2000-05-12', 5, '2000-05-12', 'zz', 'zz', 'zz', 'zz', 'zz');
 
 -- --------------------------------------------------------
 
