@@ -18,9 +18,9 @@ if ($conn->connect_error) {
   $nomclient = $_POST['nomclient'];
   $titreticket = $_POST['titreticket'];
   $descriptionticket = $_POST['descriptionticket'];
-  //$factor1 = $_POST['factor1'];
-  //$factor2 = $_POST['factor2'];
-  //$factor3 = $_POST['factor3'];
+  $factor1 = $_POST['factor1'];
+  $factor2 = $_POST['factor2'];
+  $factor3 = $_POST['factor3'];
   $montant = $_POST['montant'];
   //$statut = $_POST['statut'];
   $streetnb = $_POST['streetnb'];
@@ -40,7 +40,7 @@ if ($conn->connect_error) {
   $sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
     montant, statut, streetnb, street, postalcode, city, datedebut, datefin, nbjoursemaine, dateauplustard, consultantname1, consultantname2,
     consultantname3, consultantname4, consultantname5)
-  VALUES ('$datedujour', '$nomentreprise', '$nomclient', '1', '$titreticket', '$descriptionticket', '', '', '',
+  VALUES ('', '$nomentreprise', '$nomclient', '1', '$titreticket', '$descriptionticket', '$factor1', '$factor2', '$factor3',
     '$montant', '', '$streetnb', '$street', '$postalcode', '$city', '$datedebut', '$datefin', '$nbjoursemaine', '$dateauplustard', '$consultantname1',
     '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";
 
@@ -120,18 +120,6 @@ if(isset($_POST['submit1']))
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <!-- <li class="nav-item">
-              <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                <div class="input-group">
-                  <input class="form-control" type="text" placeholder="Search...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-warning" type="button">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </span>
-                </div>
-              </form>
-            </li>-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="table">
                 <a class="nav-link" href="ListeBesoins">
                     <i class="fa fa-fw fa-table"></i>
@@ -162,11 +150,9 @@ if(isset($_POST['submit1']))
 </nav>
 <div class="content-wrapper">
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
                 <li class="breadcrumb-item active">Create ticket</li>
         </ol>
-    <!-- /.container-fluid-->
 <form method="post" action="">
 <div class="card mb-3">
   <div class="card-header">
@@ -197,29 +183,11 @@ if(isset($_POST['submit1']))
           <div class="col-md-6">
             <div class="md-form form-sm">
             <div class="form-group">
-                <textarea name="factor1" value="factor1">factor1</textarea>
-                <textarea name="factor2" value="factor2">factor2</textarea>
-                <textarea name="factor3" value="factor3">factor3</textarea>
+                <textarea name="factor1" placeholder="factor1"></textarea>
+                <textarea name="factor2" placeholder="factor2"></textarea>
+                <textarea name="factor3" placeholder="factor3"></textarea>
             </div>
           </div>
-          <div class="md-form form-sm">
-          <div class="form-group">
-            <select class="form-control form-control-lg">
-              <option name="factor1" value="factor1">factor1</option>
-              <option name="factor2" value="factor2">factor2</option>
-              <option name="factor3" value="factor3">factor3</option>
-            </select>
-          </div>
-        </div>
-        <div class="md-form form-sm">
-        <div class="form-group">
-          <select class="form-control form-control-lg">
-            <option name="factor1" value="factor1">factor1</option>
-            <option name="factor2" value="factor2">factor2</option>
-            <option name="factor3" value="factor3">factor3</option>
-          </select>
-        </div>
-      </div>
           </div>
           <div class="col-md-3"> <div class="md-form form-sm">
         <i class="fa fa-eur"></i>
@@ -279,9 +247,6 @@ if(isset($_POST['submit1']))
               <div class="btn btn-primary btn-sm">
                 <input type="file" multiple></input>
               </div>
-              <!--<div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Description files">
-              </div>-->
             </div>
           </form>
 
@@ -301,14 +266,9 @@ if(isset($_POST['submit1']))
   </div>
 </form>
 
-
-<!-- /.container-fluid-->
-    <!-- /.container-fluid-->
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fa fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -362,8 +322,6 @@ if(isset($_POST['submit1']))
 
     <script src="assets/js/sb-admin-datatables.min.js"></script>
     <script src="assets/js/sb-admin-charts.min.js"></script>
-
 </div>
 </body>
-
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 05, 2017 at 03:47 PM
+-- Generation Time: Oct 05, 2017 at 04:17 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `besoins`;
 CREATE TABLE IF NOT EXISTS `besoins` (
   `idB` int(4) NOT NULL AUTO_INCREMENT,
-  `datedujour` date NOT NULL,
+  `datedujour` varchar(50) NOT NULL,
   `nomentreprise` varchar(50) NOT NULL,
   `nomclient` varchar(50) NOT NULL,
   `idC` int(4) NOT NULL,
@@ -46,10 +46,10 @@ CREATE TABLE IF NOT EXISTS `besoins` (
   `street` varchar(45) NOT NULL,
   `postalcode` varchar(10) NOT NULL,
   `city` text NOT NULL,
-  `datedebut` date NOT NULL,
-  `datefin` date NOT NULL,
+  `datedebut` varchar(50) NOT NULL,
+  `datefin` varchar(50) NOT NULL,
   `nbjoursemaine` int(11) NOT NULL,
-  `dateauplustard` date NOT NULL,
+  `dateauplustard` varchar(50) NOT NULL,
   `consultantname1` varchar(50) NOT NULL,
   `consultantname2` varchar(50) DEFAULT NULL,
   `consultantname3` varchar(50) DEFAULT NULL,
@@ -57,14 +57,18 @@ CREATE TABLE IF NOT EXISTS `besoins` (
   `consultantname5` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idB`),
   KEY `id client` (`idC`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `besoins`
 --
 
 INSERT INTO `besoins` (`idB`, `datedujour`, `nomentreprise`, `nomclient`, `idC`, `titreticket`, `descriptionticket`, `factor1`, `factor2`, `factor3`, `montant`, `statut`, `streetnb`, `street`, `postalcode`, `city`, `datedebut`, `datefin`, `nbjoursemaine`, `dateauplustard`, `consultantname1`, `consultantname2`, `consultantname3`, `consultantname4`, `consultantname5`) VALUES
-(3, '2000-05-12', 'zz', 'zz', 1, 'zz', '', '', '', '', 555, '', '5555', 'zz', '44', 'zz', '2000-05-12', '2000-05-12', 5, '2000-05-12', 'zz', 'zz', 'zz', 'zz', 'zz');
+(3, '2000-05-12', 'zz', 'zz', 1, 'zz', '', '', '', '', 555, '', '5555', 'zz', '44', 'zz', '2000-05-12', '2000-05-12', 5, '2000-05-12', 'zz', 'zz', 'zz', 'zz', 'zz'),
+(4, '', 'zz', 'zz', 1, 'test', 'test', 'f1', 'f2', 'f3', 55, '', '123123', 'zz', '44', 'zz', '10/02/2017', '10/15/2017', 0, '10/25/2017', 'zz', 'zz', 'zz', 'zz', 'zz'),
+(5, '', 'zz', 'zz', 1, 'test', 'test', 'f1', 'f2', 'f3', 55, '', '123123', 'zz', '44', 'zz', '10/02/2017', '10/15/2017', 0, '10/25/2017', 'zz', 'zz', 'zz', 'zz', 'zz'),
+(6, '', 'zz', 'zz', 1, 'z', 'jkmljkf', 'f1', 'f2', 'f3', 54.7, '', '21', 'zz', '44', 'zz', '10/10/2017', '11/30/2017', 6, '10/09/2017', 'zz', 'zz', 'z', 'zz', 'zz'),
+(7, '', 'zz', 'zz', 1, 'test', 'zezer', 'sdfqs', 'qsdf', 'qsdf', 55, '', '45', 'zz', '44', 'zz', '10/08/2017', '10/11/2017', 4, '10/18/2017', 'zz', 'zz', 'zz', 'zz', 'zz');
 
 -- --------------------------------------------------------
 
