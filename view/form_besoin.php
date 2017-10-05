@@ -40,7 +40,7 @@ if ($conn->connect_error) {
   $sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
     montant, statut, streetnb, street, postalcode, city, datedebut, datefin, nbjoursemaine, dateauplustard, consultantname1, consultantname2,
     consultantname3, consultantname4, consultantname5)
-  VALUES ('05/12/5555', '$nomentreprise', '$nomclient', '', '$titreticket', '$descriptionticket', '', '', '',
+  VALUES ('$datedujour', '$nomentreprise', '$nomclient', '1', '$titreticket', '$descriptionticket', '', '', '',
     '$montant', '', '$streetnb', '$street', '$postalcode', '$city', '$datedebut', '$datefin', '$nbjoursemaine', '$dateauplustard', '$consultantname1',
     '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";
 
@@ -197,11 +197,9 @@ if(isset($_POST['submit1']))
           <div class="col-md-6">
             <div class="md-form form-sm">
             <div class="form-group">
-              <select class="form-control form-control-lg">
-                <option name="factor1" value="factor1">factor1</option>
-                <option name="factor2" value="factor2">factor2</option>
-                <option name="factor3" value="factor3">factor3</option>
-              </select>
+                <textarea name="factor1" value="factor1">factor1</textarea>
+                <textarea name="factor2" value="factor2">factor2</textarea>
+                <textarea name="factor3" value="factor3">factor3</textarea>
             </div>
           </div>
           <div class="md-form form-sm">
@@ -343,7 +341,7 @@ if(isset($_POST['submit1']))
             mm = '0'+mm
         }
 
-        today = dd + '/' + mm + '/' + yyyy;
+        today = yyyy + '-' + mm + '-' + dd;
         document.getElementById('nowdate').value = today;
     </script>
 
