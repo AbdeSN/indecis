@@ -1,3 +1,67 @@
+<?php
+
+function insertion()
+{
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "indecis";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+  //$datedujour = $_POST['datedujour'];
+  $nomentreprise = $_POST['nomentreprise'];
+  $nomclient = $_POST['nomclient'];
+  $titreticket = $_POST['titreticket'];
+  $descriptionticket = $_POST['descriptionticket'];
+  //$factor1 = $_POST['factor1'];
+  //$factor2 = $_POST['factor2'];
+  //$factor3 = $_POST['factor3'];
+  $montant = $_POST['montant'];
+  //$statut = $_POST['statut'];
+  $streetnb = $_POST['streetnb'];
+  $street = $_POST['street'];
+  $postalcode = $_POST['postalcode'];
+  $city = $_POST['city'];
+  $datedebut = $_POST['datedebut'];
+  $datefin = $_POST['datefin'];
+  $nbjoursemaine = $_POST['nbjoursemaine'];
+  $dateauplustard = $_POST['dateauplustard'];
+  $consultantname1 = $_POST['consultantname1'];
+  $consultantname2 = $_POST['consultantname2'];
+  $consultantname3 = $_POST['consultantname3'];
+  $consultantname4 = $_POST['consultantname4'];
+  $consultantname5 = $_POST['consultantname5'];
+
+  $sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
+    montant, statut, streetnb, street, postalcode, city, datedebut, datefin, nbjoursemaine, dateauplustard, consultantname1, consultantname2,
+    consultantname3, consultantname4, consultantname5)
+  VALUES ('05/12/5555', '$nomentreprise', '$nomclient', '', '$titreticket', '$descriptionticket', '', '', '',
+    '$montant', '', '$streetnb', '$street', '$postalcode', '$city', '$datedebut', '$datefin', '$nbjoursemaine', '$dateauplustard', '$consultantname1',
+    '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+}
+
+
+if(isset($_POST['submit1']))
+{
+   insertion();
+}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,6 +167,7 @@
                 <li class="breadcrumb-item active">Create ticket</li>
         </ol>
     <!-- /.container-fluid-->
+<form method="post" action="">
 <div class="card mb-3">
   <div class="card-header">
     <i class="fa fa-list-alt"></i> Fiches Besoins</div>
@@ -133,27 +198,27 @@
             <div class="md-form form-sm">
             <div class="form-group">
               <select class="form-control form-control-lg">
-                <option name="factor1">factorxxx</option>
-                <option name="factor2">factorxxx</option>
-                <option name="factor3">factorxxx</option>
+                <option name="factor1" value="factor1">factor1</option>
+                <option name="factor2" value="factor2">factor2</option>
+                <option name="factor3" value="factor3">factor3</option>
               </select>
             </div>
           </div>
           <div class="md-form form-sm">
           <div class="form-group">
             <select class="form-control form-control-lg">
-              <option name="factor1">factorxxx</option>
-              <option name="factor2">factorxxx</option>
-              <option name="factor3">factorxxx</option>
+              <option name="factor1" value="factor1">factor1</option>
+              <option name="factor2" value="factor2">factor2</option>
+              <option name="factor3" value="factor3">factor3</option>
             </select>
           </div>
         </div>
         <div class="md-form form-sm">
         <div class="form-group">
           <select class="form-control form-control-lg">
-            <option name="factor1">factorxxx</option>
-            <option name="factor2">factorxxx</option>
-            <option name="factor3">factorxxx</option>
+            <option name="factor1" value="factor1">factor1</option>
+            <option name="factor2" value="factor2">factor2</option>
+            <option name="factor3" value="factor3">factor3</option>
           </select>
         </div>
       </div>
@@ -167,9 +232,9 @@
             <div class="md-form form-sm">
             <div class="form-group">
               <select class="form-control form-control-lg">
-                <option name="factor1">Open</option>
-                <option name="factor2">Win</option>
-                <option name="factor3">Lost</option>
+                <option name="statut">Open</option>
+                <option name="statut">Win</option>
+                <option name="statut">Lost</option>
               </select>
             </div>
           </div>
@@ -231,11 +296,12 @@
       </div>
     <div class="row">
       <div class="col-md">
-          <center><div class="btn btn-primary btn-lg"><span>Save & Share</span></center>
-        </div>
+          <center><input class="btn btn-primary btn-lg" value="Save & Share" type="submit" name="submit1"></center>
+        </input>
       </div>
     </div>
   </div>
+</form>
 
 
 <!-- /.container-fluid-->
