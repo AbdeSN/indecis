@@ -10,13 +10,13 @@
     <title>GFI App</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<<<<<<< HEAD:view/ticket.php
+
     <link href="assets/css/datepicker3.css" rel="stylesheet" type="text/css">
-=======
-    <link href="view/css/datepicker3.css" rel="stylesheet" type="text/css">
-    <script src="view/js/jquery-1.11.1.min.js"></script>
-    <script src="view/js/bootstrap-datepicker.js"></script>
->>>>>>> 3fa4582bfe824af3c17dbad44ab4395d3ceb1e56:ticket.php
+
+    <link href="assets/css/datepicker3.css" rel="stylesheet" type="text/css">
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+
     <!-- Custom fonts for this template-->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/font-awesome/css/mdb.min.css" rel="stylesheet" type="text/css">
@@ -70,13 +70,13 @@
               </form>
             </li>-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="table">
-                <a class="nav-link" href="tickets_list.php">
+                <a class="nav-link" href="ListeBesoins">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">Ticket list</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="list">
-                <a class="nav-link" href="ticket.php">
+                <a class="nav-link" href="FormBesoin">
                     <i class="fa fa-fw fa-list-alt"></i>
                     <span class="nav-link-text">Create ticket</span>
                 </a>
@@ -258,7 +258,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning" href="login.php">Logout</a>
+                    <a class="btn btn-warning" href="Index">Logout</a>
                 </div>
             </div>
         </div>
@@ -296,13 +296,13 @@
     <script src="assets/js/mdb.min.js"></script>
     <script src="assets/js/mdb.js"></script>
     <!-- Custom scripts for this page-->
-<<<<<<< HEAD:view/ticket.php
+
     <script src="assets/js/sb-admin-datatables.min.js"></script>
     <script src="assets/js/sb-admin-charts.min.js"></script>
-=======
-    <script src="view/js/sb-admin-datatables.min.js"></script>
-    <script src="view/js/sb-admin-charts.min.js"></script>
->>>>>>> 3fa4582bfe824af3c17dbad44ab4395d3ceb1e56:ticket.php
+
+    <script src="assets/js/sb-admin-datatables.min.js"></script>
+    <script src="assets/js/sb-admin-charts.min.js"></script>
+
 </div>
 </body>
 

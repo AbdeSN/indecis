@@ -47,7 +47,8 @@
                 </div>
                 <div class="text-center">
                     <input class="btn btn-primary btn-block btn-lg" type="submit" name="login" value="Login">
-<!--                <a class="btn btn-primary btn-block">Login</a>-->
+                    <a class="btn btn-primary" href="FormBesoin">Form</a>-->
+                    <a class="btn btn-primary" href="ListeBesoins">List</a>-->
                 </div>
             </form>
             <br>
