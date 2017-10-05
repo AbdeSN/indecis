@@ -16,13 +16,13 @@
     <!-- Page level plugin CSS-->
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="view/css/sb-admin.css" rel="stylesheet">
-    <link href="view/css/mdb.css" rel="stylesheet">
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link href="assets/css/mdb.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
 <br>
-<center><img src="view/images/big%20logo.png" width="200" height="120"></center>
+<center><img src="assets/images/big_logo.png" width="200" height="120"></center>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
         <div style="height: 2rem" class="card-header"></div>
@@ -77,11 +77,11 @@
 <script src="vendor/datatables/jquery.dataTables.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 <!-- Custom scripts for all pages-->
-<script src="view/js/sb-admin.min.js"></script>
-<script src="view/js/mdb.min.js"></script>
+<script src="assets/js/sb-admin.min.js"></script>
+<script src="assets/js/mdb.min.js"></script>
 <!-- Custom scripts for this page-->
-<script src="view/js/sb-admin-datatables.min.js"></script>
-<script src="view/js/sb-admin-charts.min.js"></script>
+<script src="assets/js/sb-admin-datatables.min.js"></script>
+<script src="assets/js/sb-admin-charts.min.js"></script>
 </body>
 
 </html>

@@ -9,8 +9,8 @@ function connexion()
 
     return array('host'=>'localhost',
         'user'=>'root',
-        'password'=>'1motdepassE',
-        'database'=>'abderrahifroot',
+        'password'=>'',
+        'database'=>'indecis',
         'etat'=>'on');//mettez a on pour activer et off pour desactiver la base
 }
 ?>

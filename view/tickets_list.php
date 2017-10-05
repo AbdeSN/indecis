@@ -9,22 +9,22 @@
     <meta name="author" content="">
     <title>GFI App</title>
     <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/font-awesome/css/mdb.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/mdb.min.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="view/css/sb-admin.css" rel="stylesheet">
-    <link href="view/css/mdb.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin.css" rel="stylesheet">
+    <link href="../assets/css/mdb.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="card-sm">
-        <img src="view/images/gfi-logo.png">
+        <img src="../assets/images/gfi-logo.png">
     </div>
     <div style="display: inline-block">
         <p style="font-size: small; float: left; color: white;">Name of commercial</p>
@@ -57,7 +57,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="list">
-                <a class="nav-link" href="ticket.php">
+                <a class="nav-link" href="ticket.phphp">
                     <i class="fa fa-fw fa-list-alt"></i>
                     <span class="nav-link-text">Create ticket</span>
                 </a>
@@ -168,21 +168,21 @@
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/popper/popper.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="view/js/sb-admin.min.js"></script>
-    <script src="view/js/mdb.min.js"></script>
+    <script src="../assets/js/sb-admin.min.js"></script>
+    <script src=../assets/"js/mdb.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="view/js/sb-admin-datatables.min.js"></script>
-    <script src="view/js/sb-admin-charts.min.js"></script>
+    <script src="../assets/js/sb-admin-datatables.min.js"></script>
+    <script src="../assets/js/sb-admin-charts.min.js"></script>
 </div>
 </body>
 

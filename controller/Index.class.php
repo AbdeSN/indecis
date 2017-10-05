@@ -11,7 +11,8 @@
 
     public function index()
     {
-        require_once __ROOT__.'/login.php';
+
+        $this->view->load("login");
     }
 
 }

@@ -10,7 +10,8 @@
             public function login($mail, $password)
             {
                 $password = sha1($_POST['password']);
-                $req = $bdd->prepare('select * frm users where mail = :mail and password = :password');
+
+                $req = $bdd->prepare('select * from users where mail = :mail and password = :password');
                 $req->execute(array(
                    'mail' => $mail,
                    'password' => $password
