@@ -62,12 +62,6 @@
                     <span class="nav-link-text">Create ticket</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="send">
-                <a class="nav-link" href="contact.php">
-                    <i class="fa fa-fw fa-send"></i>
-                    <span class="nav-link-text">Contact</span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-fw fa-sign-out"></i>
@@ -93,9 +87,8 @@
         </ol>
         <!-- Example DataTables Card-->
         <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-table"></i> Client selection</div>
-            <div class="card-body">
+            <div  style="height: 1rem" class="card-header"></div>
+                <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-fit" datatable-show-refresh="true" id="dataTable" width="100%" cellspacing="0">
                         <thead>

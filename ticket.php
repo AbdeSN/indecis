@@ -31,9 +31,15 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="card-sm">
-        <center><img src="view/images/gfi-logo.png"></center>
+        <img src="view/images/gfi-logo.png">
     </div>
-    <p class="navbar-brand">Name of commercial</p>
+
+        <div style="display: inline-block">
+            <p style="font-size: small; float: left; color: white;">Name of commercial</p>
+
+            <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
+        </div>
+
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,8 +94,7 @@
         </ol>
         <!-- /.container-fluid-->
         <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-list-alt"></i> Form</div>
+            <div  style="height: 1rem" class="card-header"></div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3"> <div class="md-form form-sm">
@@ -134,58 +139,81 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-3"> <div class="md-form form-sm">
-                            <i class="fa fa-map-marker "></i>
-                            <input placeholder="Loaction" type="text" id="Location" class="form-control">
-                        </div></div>
-                    <div class="col-md-3"> <div class="md-form form-sm">
-                            <i class="fa fa-eur"></i>
-                            <input placeholder="Rate" type="text" id="Rate" class="form-control">
-                        </div> </div>
-                    <div class="col-md-3">
-                        <i class="fa fa-user"></i>
-                        <div class="md-form form-sm">
-                            <input placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
-                            <input placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
-                            <input placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
-                            <input placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
-                            <input placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
-                        </div> </div>
-                    <div class="col-md-3">
-                        <label for="form5">Status :</label>
-                        <form class="form-inline">
-
-                            <div class="form-group">
-                                <input name="group1" type="radio" id="radio1" checked="checked">
-                                <label for="radio11">Open</label>
-                            </div>
-                            <div class="form-group">
-                                <input name="group1" type="radio" id="radio2">
-                                <label for="radio21">Win</label>
-                            </div>
-                            <div class="form-group">
-                                <input name="group1" type="radio" id="radio3">
-                                <label for="radio31">Lost</label>
-                            </div>
-                        </form>
+                    <div class="col-md-2">
 
                     </div>
+                    <div class="col-md-3">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-map-marker "></i>
+                            <input placeholder="Loaction" type="text" id="Location" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-eur"></i>
+                            <input placeholder="Rate" type="text" id="Rate" class="form-control">
+                        </div>
+                    </div>
                 </div>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <div class="md-form form-sm">
+                        <input placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
+                        <input placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
+                        <input placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
+                        <input placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
+                        <input placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
+                    </div>
+                </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <form class="form-inline">
+
+                                <div class="form-group">
+                                    <label style="color: #495057; margin-right: 2rem" for="form5"><b>Stat :</b></label>
+                                    <input name="group1" type="radio" id="radio1" checked="checked">
+                                    <label style="color: #495057; " for="radio11">Open</label>
+                                </div>
+                                <div class="form-group">
+                                    <input name="group1" type="radio" id="radio2">
+                                    <label style="color: #495057; " for="radio21">Win</label>
+                                </div>
+                                <div class="form-group">
+                                    <input name="group1" type="radio" id="radio3">
+                                    <label style="color: #495057; " for="radio31">Lost</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
             </div>
             <div class="row">
                 <div class="col-md">
                     <form action="#">
                         <div class="file-field">
-                            <div class="btn btn-primary btn-sm">
-                                <input type="file" multiple></input>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Description files">
-                            </div>
+                            <center>
+                                <div class="btn btn-primary btn-sm">
+                                    <input type="file" multiple></input>
+                                </div>
+                            </center>
+                            <br>
+                            <center>
+                                <div class="file-path-wrapper col-md-6 ">
+                                    <input class="file-path validate" type="text" placeholder="Description files">
+                                </div>
+                            </center>
                         </div>
                     </form>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-md">
                     <center><div class="btn btn-primary btn-lg"><span>Save & Share</span></center>
