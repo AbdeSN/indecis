@@ -106,22 +106,22 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-3"> <div class="md-form form-sm">
-          <input placeholder="Date" type="text" id="nowdate" class="form-control" disabled>
+          <input name="datedujour" placeholder="Date" type="text" id="nowdate" class="form-control" disabled>
         </div></div>
         <div class="col-md-3"> <div class="md-form form-sm">
-          <input placeholder="Client" type="text" id="Client" class="form-control">
+          <input name="nomentreprise" placeholder="Client" type="text" id="Client" class="form-control">
         </div> </div>
         <div class="col-md-3"><div class="md-form form-sm">
-          <input placeholder="Name" type="text" id="Name" class="form-control">
+          <input name="nomclient" placeholder="Name" type="text" id="Name" class="form-control">
         </div> </div>
         <div class="col-md-3"><div class="md-form form-sm">
-          <input placeholder="Title" type="text" id="Title" class="form-control">
+          <input name="titreticket" placeholder="Title" type="text" id="Title" class="form-control">
         </div> </div>
       </div>
       <div class="row">
         <div class="col md">
           <div class="md-form form-sm">
-            <textarea type="text" id="fulldescription" class="md-textarea" rows="" placeholder="Full description"></textarea>
+            <textarea name="descriptionticket" type="text" id="fulldescription" class="md-textarea" rows="" placeholder="Full description"></textarea>
           </div>
         </div>
       </div>
@@ -130,71 +130,82 @@
             <div class="md-form form-sm">
             <div class="form-group">
               <select class="form-control form-control-lg">
-                <option>Factor 1</option>
-                <option>Factor 2</option>
-                <option>Factor 3</option>
+                <option name="factor1">factorxxx</option>
+                <option name="factor2">factorxxx</option>
+                <option name="factor3">factorxxx</option>
               </select>
             </div>
           </div>
+          <div class="md-form form-sm">
+          <div class="form-group">
+            <select class="form-control form-control-lg">
+              <option name="factor1">factorxxx</option>
+              <option name="factor2">factorxxx</option>
+              <option name="factor3">factorxxx</option>
+            </select>
+          </div>
+        </div>
+        <div class="md-form form-sm">
+        <div class="form-group">
+          <select class="form-control form-control-lg">
+            <option name="factor1">factorxxx</option>
+            <option name="factor2">factorxxx</option>
+            <option name="factor3">factorxxx</option>
+          </select>
+        </div>
+      </div>
           </div>
           <div class="col-md-3"> <div class="md-form form-sm">
         <i class="fa fa-eur"></i>
-          <input placeholder="Rate" type="number" min="0.00" step="0.01" value="1.00" id="Rate" class="form-control">
+          <input name="montant" placeholder="Rate" type="number" min="0.00" step="0.01" id="Rate" class="form-control">
         </div>
-
           </div>
           <div class="col-md-3"><label for="form5">Status :</label>
-          <form class="form-inline">
-
+            <div class="md-form form-sm">
             <div class="form-group">
-              <input name="group1" type="radio" id="radio1" checked="checked">
-              <label for="radio11">Open</label>
+              <select class="form-control form-control-lg">
+                <option name="factor1">Open</option>
+                <option name="factor2">Win</option>
+                <option name="factor3">Lost</option>
+              </select>
             </div>
-            <div class="form-group">
-              <input name="group1" type="radio" id="radio2">
-              <label for="radio21">Win</label>
-            </div>
-            <div class="form-group">
-              <input name="group1" type="radio" id="radio3">
-              <label for="radio31">Lost</label>
-            </div>
-          </form>
+          </div>
 
           </div>
         </div>
       <div class="row">
         <div class="col-md-3">
         <i class="fa fa-map-marker"></i> <span>Location</span><div class="md-form form-sm">
-          <input placeholder="Number" type="number" id="Location" class="form-control">
-          <input placeholder="Street" type="text" id="Location" class="form-control">
-          <input placeholder="Postal Code" type="number" id="Location" class="form-control">
-          <input placeholder="City" type="text" id="Location" class="form-control">
+          <input name="streetnb" placeholder="Number" type="number" id="Location" class="form-control">
+          <input name="street" placeholder="Street" type="text" id="Location" class="form-control">
+          <input name="postalcode" placeholder="Postal Code" type="number" id="Location" class="form-control">
+          <input name="city" placeholder="City" type="text" id="Location" class="form-control">
         </div></div>
         <div class="col-md-3">
           <div class="form-inline">
             <div class="md-form form-sm">
                 <div class="input-group input-daterange">
-                <input type="text" class="form-control datepicker" value="" placeholder="">
+                <input name="datedebut" type="text" class="form-control datepicker" value="" placeholder="date début">
                 <div class="input-group-addon"><span>to</span></div>
-                <input type="text" class="form-control datepicker" value="" placeholder="">
+                <input name="datefin" type="text" class="form-control datepicker" value="" placeholder="date fin">
                 </div>
             </div>
             <div class="md-form form-sm">
-              <input placeholder="Days/Week" type="number" min="0" step="1" id="Duration" class="form-control">
+              <input name="nbjoursemaine" placeholder="Days/Week" type="number" min="0" step="1" id="Duration" class="form-control">
             </div>
           </div>
             <div class="from-group date">
-              <input class="datepicker" type="text" name="date" placeholder="Start at the latest">
+              <input class="datepicker" type="text" name="dateauplustard" placeholder="Start at the latest">
             </div>
         </div>
         <div class="col-md-3">
         <i class="fa fa-user"></i> <span>Names</span>
           <div class="md-form form-sm">
-          <input placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
-          <input placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
-          <input placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
-          <input placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
-          <input placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
+          <input name ="consultantname1" placeholder="Consultant Name" type="text" id="consultantname1" class="form-control">
+          <input name ="consultantname2" placeholder="Consultant Name" type="text" id="consultantname2" class="form-control">
+          <input name ="consultantname3" placeholder="Consultant Name" type="text" id="consultantname3" class="form-control">
+          <input name ="consultantname4" placeholder="Consultant Name" type="text" id="consultantname4" class="form-control">
+          <input name ="consultantname5" placeholder="Consultant Name" type="text" id="consultantname5" class="form-control">
         </div> </div>
         <div class="col-md-3">
         <form action="#">
