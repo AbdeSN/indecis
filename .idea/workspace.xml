@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bdd5e77-e255-492a-b88f-5f18f90daaa1" name="Default" comment="" />
+    <list default="true" id="7bdd5e77-e255-492a-b88f-5f18f90daaa1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/form_besoin.php" afterPath="$PROJECT_DIR$/view/form_besoin.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="liste_besoins.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="liste_besoins.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/liste_besoins.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -60,14 +62,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form_besoin.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="form_besoin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/form_besoin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="373" column="98" lean-forward="false" selection-start-line="373" selection-start-column="98" selection-end-line="373" selection-end-column="98" />
+            <state relative-caret-position="340">
+              <caret line="355" column="54" lean-forward="true" selection-start-line="355" selection-start-column="54" selection-end-line="355" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1507254241183" expanded="true" signature="1465:2144" ph="INSERT INTO besoins... " />
+                <marker date="1507254581787" expanded="true" signature="1465:2144" ph="INSERT INTO besoins... " />
               </folding>
             </state>
           </provider>
@@ -90,8 +92,8 @@
       <find>&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;</find>
       <find>form-control-sm</find>
       <find>session_start();</find>
-      <find>fich</find>
       <find>locatio</find>
+      <find>fich</find>
     </findStrings>
     <dirStrings>
       <dir>C:\wamp\www\indecis</dir>
@@ -136,8 +138,8 @@
         <option value="$PROJECT_DIR$/model/ConnexionDao.class.php" />
         <option value="$PROJECT_DIR$/view/login.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.php" />
-        <option value="$PROJECT_DIR$/view/form_besoin.php" />
         <option value="$PROJECT_DIR$/view/liste_besoins.php" />
+        <option value="$PROJECT_DIR$/view/form_besoin.php" />
       </list>
     </option>
   </component>
@@ -269,7 +271,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63469000" />
+    <option name="totallyTimeSpent" value="63796000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -642,17 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/form_besoin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="373" column="98" lean-forward="false" selection-start-line="373" selection-start-column="98" selection-end-line="373" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1507254241183" expanded="true" signature="1465:2144" ph="INSERT INTO besoins... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/liste_besoins.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -674,6 +665,17 @@
             <marker date="1507254247799" expanded="true" signature="6310:6626" ph="..." />
             <marker date="1507254247799" expanded="true" signature="6503:6599" ph="..." />
             <marker date="1507254247799" expanded="true" signature="6791:7018" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/form_besoin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="355" column="54" lean-forward="true" selection-start-line="355" selection-start-column="54" selection-end-line="355" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1507254581787" expanded="true" signature="1465:2144" ph="INSERT INTO besoins... " />
           </folding>
         </state>
       </provider>

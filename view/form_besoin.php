@@ -286,9 +286,9 @@ if(isset($_POST['submit1']))
             <div class="md-form form-sm">
             <div class="form-group">
               <select class="form-control form-control-lg">
-                <option name="statut">Open</option>
-                <option name="statut">Win</option>
-                <option name="statut">Lost</option>
+                <option value="open" name="statut">Open</option>
+                <option value="win" name="statut">Win</option>
+                <option value="lost" name="statut">Lost</option>
               </select>
             </div>
           </div>
@@ -317,9 +317,7 @@ if(isset($_POST['submit1']))
               <input name="nbjoursemaine" placeholder="Days/Week" type="number" min="0" step="1" id="Duration" class="form-control">
             </div>
           </div>
-            <div class="from-group date">
-              <input class="datepicker" type="text" name="dateauplustard" placeholder="Start at the latest">
-            </div>
+
         </div>
         <div class="col-md-3">
         <i class="fa fa-user"></i> <span>Names</span>
@@ -348,7 +346,7 @@ if(isset($_POST['submit1']))
       </div>
     <div class="row">
       <div class="col-md">
-          <center><input class="btn btn-primary btn-lg" value="Save & Share" type="submit" name="submit1"></center>
+          <center><input class="btn btn-primary btn-lg" value="Save & Share" type="submit" name=""></center>
         </input>
       </div>
     </div>
