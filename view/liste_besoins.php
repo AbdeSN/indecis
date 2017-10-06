@@ -1,21 +1,22 @@
 <?php
 session_start();
-/* if(isset($_POST['out']))
+ if(isset($_POST['out']))
     {
         // Suppression des variables de session et de la session
         session_destroy();
+        header("Location: Index");
 
     // Suppression des cookies de connexion automatique
-//        setcookie('login', '');
-//        setcookie('pass_hache', '');
+       setcookie('login', '');
+        setcookie('pass_hache', '');
 
-        header("Location: Index");
+
     }
     else
     {
 
     }
-*/?>
+?>
 
 
 <!DOCTYPE html>
@@ -50,9 +51,7 @@ session_start();
     </div>
     <div style="display: inline-block">
         <p style="font-size: small; float: left; color: white;">
-            <?php
-                    var_dump($_SESSION['mail']);
-            ?>
+            user1@gfi.fr
         </p>
 
         <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
@@ -156,7 +155,7 @@ session_start();
     </a>
 
     <!-- Logout Modal-->
-    <form method="post  ">
+    <form method="post">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

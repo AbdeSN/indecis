@@ -1,4 +1,22 @@
 <?php
+session_start();
+if(isset($_POST['out']))
+{
+    // Suppression des variables de session et de la session
+    session_destroy();
+    header("Location: Index");
+
+    // Suppression des cookies de connexion automatique
+    setcookie('login', '');
+    setcookie('pass_hache', '');
+
+
+}
+else
+{
+
+}
+
 
 function insertion()
 {
@@ -37,12 +55,12 @@ if ($conn->connect_error) {
   $consultantname4 = $_POST['consultantname4'];
   $consultantname5 = $_POST['consultantname5'];
 
-  /*$sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
+  $sql = "INSERT INTO besoins (datedujour, nomentreprise, nomclient, idC, titreticket, descriptionticket, factor1, factor2, factor3,
     montant, statut, streetnb, street, postalcode, city, datedebut, datefin, nbjoursemaine, dateauplustard, consultantname1, consultantname2,
     consultantname3, consultantname4, consultantname5)
   VALUES ('', '$nomentreprise', '$nomclient', '1', '$titreticket', '$descriptionticket', '$factor1', '$factor2', '$factor3',
     '$montant', '', '$streetnb', '$street', '$postalcode', '$city', '$datedebut', '$datefin', '$nbjoursemaine', '$dateauplustard', '$consultantname1',
-    '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";*/
+    '$consultantname2', '$consultantname3', '$consultantname4', '$consultantname5')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -177,7 +195,9 @@ if(isset($_POST['submit1']))
     </div>
 
         <div style="display: inline-block">
-            <p style="font-size: small; float: left; color: white;">Name of commercial</p>
+            <p style="font-size: small; float: left; color: white;">
+                user1@gfi.fr
+            </p>
 
             <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
         </div>
@@ -338,23 +358,25 @@ if(isset($_POST['submit1']))
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fa fa-angle-up"></i>
     </a>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning" href="Index">Logout</a>
+        <form method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-grey" type="button" data-dismiss="modal">Cancel</button>
+                            <input class="btn btn-warning" type="submit" name="out" value="Logout">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </form>
 
     <script>
         var today = new Date();
