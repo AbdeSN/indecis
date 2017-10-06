@@ -78,6 +78,7 @@ if(isset($_POST['submit1']))
 
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -87,6 +88,69 @@ if(isset($_POST['submit1']))
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin.css" rel="stylesheet" type="text/css">
     <link href="assets/css/mdb.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+        var geocoder;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
+        //Get the latitude and the longitude;
+        function successFunction(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            codeLatLng(lat, lng)
+        }
+
+        function errorFunction(){
+            alert("Geocoder failed");
+        }
+
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+
+
+
+        }
+
+        function codeLatLng(lat, lng) {
+
+            var latlng = new google.maps.LatLng(lat, lng);
+            geocoder.geocode({'latLng': latlng}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log("hello");
+                    console.log(results)
+                    if (results[1]) {
+                        //formatted address
+                        var address = results[0].formatted_address;
+                        document.getElementById("address").innerHTML = address;
+                        //find country name
+                        for (var i=0; i<results[0].address_components.length; i++) {
+                            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+
+                                //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                                    //this is the object you are looking for
+                                    city= results[0].address_components[i];
+                                    break;
+                                }
+                            }
+                        }
+                        //city data
+                        var region = city.short_name + " " + city.long_name;
+                        document.getElementById("region").innerHTML = region;
+
+
+                    } else {
+                        alert("No results found");
+                    }
+                } else {
+                    alert("Geocoder failed due to: " + status);
+                }
+            });
+        }
+    </script>
 
     <script>
         $(function(){
@@ -98,9 +162,14 @@ if(isset($_POST['submit1']))
       	$('.datepicker').datepicker();
       	});
     </script>
+    <script type="text/javascript">
+
+
+
+    </script>
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="initialize()">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="card-sm">
@@ -155,7 +224,7 @@ if(isset($_POST['submit1']))
 <form method="post" action="">
 <div class="card mb-3">
   <div class="card-header">
-    <i class="fa fa-list-alt"></i> Fiches Besoins</div>
+    <i class="fa fa-list-alt"></i> Fill in the form</div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-3"> <div class="md-form form-sm">
@@ -209,7 +278,8 @@ if(isset($_POST['submit1']))
       <div class="row">
         <div class="col-md-3">
         <i class="fa fa-map-marker"></i> <span>Location</span><div class="md-form form-sm">
-          <input name="streetnb" placeholder="Number" type="number" id="Location" class="form-control">
+          <input name ="address" placeholder ="Address" type ="text" id ="address" class ="form-control" >
+          <input name ="region" placeholder ="Region" type ="text" id ="region" class ="form-control" disabled>
           <input name="street" placeholder="Street" type="text" id="Location" class="form-control">
           <input name="postalcode" placeholder="Postal Code" type="number" id="Location" class="form-control">
           <input name="city" placeholder="City" type="text" id="Location" class="form-control">

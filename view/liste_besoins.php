@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /* if(isset($_POST['out']))
     {
         // Suppression des variables de session et de la session
@@ -49,7 +49,11 @@
         <img src="assets/images/gfi-logo.png">
     </div>
     <div style="display: inline-block">
-        <p style="font-size: small; float: left; color: white;"><?php  ?></p>
+        <p style="font-size: small; float: left; color: white;">
+            <?php
+                    var_dump($_SESSION['mail']);
+            ?>
+        </p>
 
         <p style="font-size: x-small; float: left; color: #f5b01f; margin-left: 5px;">(Connecté)</p>
     </div>
@@ -99,7 +103,7 @@
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div  style="height: 1rem" class="card-header"></div>
-            <a style="text-align: center;" href="FormBesoin">
+            <a style="text-align: center;" href="formBesoin">
                 <button style="text-align: center;" class="btn btn-warning btn-sm">Create a ticket</button>
             </a>
                 <div class="card-body">

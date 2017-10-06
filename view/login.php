@@ -45,12 +45,12 @@ if(isset($_POST['log']))
             }
             else
             {
-                $message = "Email adress error";
+                $message = "Email address error";
             }
         }
         else
         {
-            $message =  "Enter GFI email adress";
+            $message =  "Enter GFI email address";
         }
     }
     else
@@ -95,7 +95,7 @@ else
 <center><img src="assets/images/big_logo.png" width="200" height="120"></center>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div style="height: 2rem" class="card-header"><?php echo $message ?></div>
+        <div style="height: 2rem;" class="card-header"><p style="color: red; margin-top: -5px; font-weight: bold;" class="text-center"><?php echo $message ?></p></div>
         <div class="card-body">
             <form method="post">
                 <div class="md-form">
